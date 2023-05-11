@@ -1,3 +1,5 @@
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:media_booster/staggered_gallery/s_gallery_provider.dart';
 import 'package:media_booster/staggered_gallery/staggered.dart';
@@ -10,23 +12,27 @@ import 'login_UI/screens/login_welcome.dart';
 
 void main() {
   runApp(
-    Sizer(
-      builder: (context, orientation, deviceType) => MultiProvider(
-        providers: [
-          ChangeNotifierProvider(create: (context) => SGalleryProvider(),),
-        ],
-        child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          initialRoute: "welcome",
-          routes: {
-            "/":(context) => Login_SignUp(),
-            "signup":(context) => Login_SignUp(),
-            "signin":(context) => Login_SignIn(),
-            "welcome":(context) => Login_Welcome(),
-            "gallery":(context) => Staggered_Gallery(),
-          },
+    // DevicePreview(
+    //   enabled: !kReleaseMode,
+    //   builder: (context) =>
+          Sizer(
+            builder: (context, orientation, deviceType) => MultiProvider(
+              providers: [
+                ChangeNotifierProvider(create: (context) => SGalleryProvider(),),
+              ],
+              child: MaterialApp(
+                debugShowCheckedModeBanner: false,
+                initialRoute: "welcome",
+                routes: {
+                  "/":(context) => Login_SignUp(),
+                  "signup":(context) => Login_SignUp(),
+                  "signin":(context) => Login_SignIn(),
+                  "welcome":(context) => Login_Welcome(),
+                  "gallery":(context) => Staggered_Gallery(),
+                },
+              ),
+            ),
         ),
-      ),
-    ),
+    //),
   );
 }

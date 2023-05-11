@@ -13,9 +13,9 @@ import 'login_UI/screens/login_welcome.dart';
 
 void main() {
   runApp(
-    // DevicePreview(
-    //   enabled: !kReleaseMode,
-    //   builder: (context) =>
+    DevicePreview(
+      enabled: !kReleaseMode,
+      builder: (context) =>
           Sizer(
             builder: (context, orientation, deviceType) => MultiProvider(
               providers: [
@@ -34,6 +34,6 @@ void main() {
               ),
             ),
         ),
-    //),
+    ),
   );
 }

@@ -17,6 +17,7 @@ class _Login_CreateState extends State<Login_Create> {
     return SafeArea(
       child: Scaffold(
         body: Stack(
+
           children: [
             Align(
               alignment: Alignment(1.8,-1.7),

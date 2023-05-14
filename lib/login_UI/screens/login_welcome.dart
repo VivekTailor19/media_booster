@@ -12,6 +12,9 @@ class Login_Welcome extends StatefulWidget {
 class _Login_WelcomeState extends State<Login_Welcome> {
   @override
   Widget build(BuildContext context) {
+
+    String names = ModalRoute.of(context)!.settings.arguments as String;
+
     return SafeArea(
       child: Scaffold(
         body: Stack(
@@ -86,7 +89,7 @@ class _Login_WelcomeState extends State<Login_Welcome> {
                   height: 6.h,
                   width: 100.w,
                   child: Text(
-                    "Login as Maria",
+                    "Login as $names",
                     style: TextStyle(
                         fontSize: 6.5.w,
                         fontWeight: FontWeight.bold,
@@ -110,9 +113,14 @@ class _Login_WelcomeState extends State<Login_Welcome> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    "Delete account",
-                    style: TextStyle(fontSize: 5.w,decoration: TextDecoration.underline,),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, "signup");
+                    },
+                    child: Text(
+                      "Delete account",
+                      style: TextStyle(fontSize: 5.w,decoration: TextDecoration.underline,),
+                    ),
                   ),
 
                 ],

@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:media_booster/login_UI/shared_preferencess/login_shared.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sizer/sizer.dart';
 
 class Login_SignUp extends StatefulWidget {
@@ -10,6 +12,10 @@ class Login_SignUp extends StatefulWidget {
 }
 
 class _Login_SignUpState extends State<Login_SignUp> {
+
+  TextEditingController txtemail = TextEditingController();
+  TextEditingController txtpassword = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -84,6 +90,7 @@ class _Login_SignUpState extends State<Login_SignUp> {
                       height: 2.h,
                     ),
                     TextField(
+                      controller: txtemail,
                       decoration: InputDecoration(
                           hintText: "E-mail",
                           hintStyle: TextStyle(fontSize: 20),
@@ -93,7 +100,9 @@ class _Login_SignUpState extends State<Login_SignUp> {
                           )),
                     ),
                     TextField(
+                      controller: txtpassword,
                       decoration: InputDecoration(
+
                           hintText: "Password",
                           hintStyle: TextStyle(fontSize: 20),
                           suffixIcon: Icon(
@@ -104,23 +113,31 @@ class _Login_SignUpState extends State<Login_SignUp> {
                     SizedBox(
                       height: 5.h,
                     ),
-                    Container(
-                      height: 6.h,
-                      width: 79.5.w,
-                      child: Text(
-                        "Sign up",
-                        style: TextStyle(
-                            fontSize: 6.5.w,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white),
+                    InkWell(
+                      onTap: () async {
+                        ApnaShared aps = ApnaShared();
+                        aps.setdata(password: txtpassword.text, email: txtemail.text,login: true,name:"Flutter");
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Data is registered"),duration: Duration(seconds: 1),));
+                        Navigator.pushReplacementNamed(context, 'signin');
+                      },
+                      child: Container(
+                        height: 6.h,
+                        width: 79.5.w,
+                        child: Text(
+                          "Sign up",
+                          style: TextStyle(
+                              fontSize: 6.5.w,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
+                        ),
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                            gradient: LinearGradient(colors: [
+                          Color(0xff1F6AC7),
+                          Color(0xff2A8CED),
+                          Color(0xff38B4FE),
+                        ])),
                       ),
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                          gradient: LinearGradient(colors: [
-                        Color(0xff1F6AC7),
-                        Color(0xff2A8CED),
-                        Color(0xff38B4FE),
-                      ])),
                     )
                   ],
                 ),
@@ -138,13 +155,15 @@ class _Login_SignUpState extends State<Login_SignUp> {
                   SizedBox(
                     width: 1.5.w,
                   ),
-                  Text(
-                    "Sign in",
+                  TextButton(onPressed: (){
+                    Navigator.pushReplacementNamed(context, 'signin');
+                  },
+                    child:Text("Sign in",
                     style: TextStyle(
                       color: Colors.blue,
                       fontSize: 5.w,
                       decoration: TextDecoration.underline,
-                    ),
+                    ),)
                   )
                 ],
               ),

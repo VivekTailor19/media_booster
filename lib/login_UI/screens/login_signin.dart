@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:media_booster/login_UI/shared_preferencess/login_shared.dart';
 import 'package:sizer/sizer.dart';
 
 class Login_SignIn extends StatefulWidget {
@@ -10,6 +11,11 @@ class Login_SignIn extends StatefulWidget {
 }
 
 class _Login_SignInState extends State<Login_SignIn> {
+
+  TextEditingController checkemail = TextEditingController();
+  TextEditingController checkpassword = TextEditingController();
+
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -66,8 +72,9 @@ class _Login_SignInState extends State<Login_SignIn> {
                       height: 2.h,
                     ),
                     TextField(
+                      controller: checkemail,
                       decoration: InputDecoration(
-                          hintText: "Username",
+                          hintText: "Email",
                           hintStyle: TextStyle(fontSize: 20),
                           suffixIcon: Icon(
                             Icons.person,
@@ -75,6 +82,7 @@ class _Login_SignInState extends State<Login_SignIn> {
                           )),
                     ),
                     TextField(
+                        controller: checkpassword,
                       decoration: InputDecoration(
                           hintText: "Password",
                           hintStyle: TextStyle(fontSize: 20),
@@ -86,23 +94,40 @@ class _Login_SignInState extends State<Login_SignIn> {
                     SizedBox(
                       height: 5.h,
                     ),
-                    Container(
-                      height: 6.h,
-                      width: 100.w,
-                      child: Text(
-                        "Sign in",
-                        style: TextStyle(
-                            fontSize: 6.5.w,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white),
+                    InkWell(
+                      onTap: () async {
+                        ApnaShared aps = ApnaShared();
+
+                        LoginModel lm =await aps.readdata();
+
+                        if(lm.email== checkemail.text && lm.password== checkpassword.text)
+                        {
+                          Navigator.pushReplacementNamed(context, 'welcome',arguments: lm.name);
+                        }
+                        else
+                        {
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Wrong Email-ID OR Password")));
+                        }
+
+                      },
+                      child: Container(
+                        height: 6.h,
+                        width: 100.w,
+                        child: Text(
+                          "Sign in",
+                          style: TextStyle(
+                              fontSize: 6.5.w,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
+                        ),
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                            gradient: LinearGradient(colors: [
+                              Color(0xff1F6AC7),
+                              Color(0xff2A8CED),
+                              Color(0xff38B4FE),
+                            ])),
                       ),
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                          gradient: LinearGradient(colors: [
-                            Color(0xff1F6AC7),
-                            Color(0xff2A8CED),
-                            Color(0xff38B4FE),
-                          ])),
                     )
                   ],
                 ),
@@ -120,12 +145,17 @@ class _Login_SignInState extends State<Login_SignIn> {
                   SizedBox(
                     width: 1.5.w,
                   ),
-                  Text(
-                    "Sign up",
-                    style: TextStyle(
-                      color: Colors.blue,
-                      fontSize: 5.w,
-                      decoration: TextDecoration.underline,
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(context, 'signup');
+                    },
+                    child: Text(
+                      "Sign up",
+                      style: TextStyle(
+                        color: Colors.blue,
+                        fontSize: 5.w,
+                        decoration: TextDecoration.underline,
+                      ),
                     ),
                   )
                 ],

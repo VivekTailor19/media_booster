@@ -12,7 +12,6 @@ import 'login_UI/screens/login_signup.dart';
 import 'login_UI/screens/login_welcome.dart';
 import 'login_UI/splash/login_splash.dart';
 
-
 void main() {
   runApp(
     // DevicePreview(

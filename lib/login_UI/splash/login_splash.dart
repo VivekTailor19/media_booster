@@ -14,10 +14,11 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
 
-    Future.delayed(Duration(seconds: 1),() async {
+    Future.delayed(Duration(seconds: 3),() async {
       ApnaShared aps = ApnaShared();
-      LoginModel lm = await aps.readdata();
-      lm.islogin != false ? Navigator.pushNamed(context,"welcome") : Navigator.pushNamed(context,"signin");
+      Map m1 = await aps.readdata();
+
+      m1['glogin'] ? Navigator.pushNamed(context,"welcome", arguments: m1['gname']) : Navigator.pushNamed(context,"signin");
     },);
 
     return SafeArea(

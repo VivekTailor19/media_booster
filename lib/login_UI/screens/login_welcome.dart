@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:media_booster/login_UI/shared_preferencess/login_shared.dart';
 import 'package:sizer/sizer.dart';
 
 class Login_Welcome extends StatefulWidget {
@@ -10,6 +11,10 @@ class Login_Welcome extends StatefulWidget {
 }
 
 class _Login_WelcomeState extends State<Login_Welcome> {
+
+
+
+
   @override
   Widget build(BuildContext context) {
 
@@ -88,12 +93,17 @@ class _Login_WelcomeState extends State<Login_Welcome> {
                 child: Container(
                   height: 6.h,
                   width: 100.w,
-                  child: Text(
-                    "Login as $names",
-                    style: TextStyle(
-                        fontSize: 6.5.w,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
+                  child: TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, "gallery");
+                    },
+                    child: Text(
+                      "Login as $names",
+                      style: TextStyle(
+                          fontSize: 6.5.w,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    ),
                   ),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
@@ -107,14 +117,17 @@ class _Login_WelcomeState extends State<Login_Welcome> {
             ),
 
 
-
             Align(
               alignment: Alignment(0.5, 0.95),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TextButton(
-                    onPressed: () {
+                    onPressed: () async {
+                      ApnaShared aps = ApnaShared();
+                      Map m1 = await aps.readdata();
+                      m1['gemail'] = 'sdjfsdfdfs';
+                      m1['gpassword'] = 'sdjfsdfdfs';
                       Navigator.pushNamed(context, "signup");
                     },
                     child: Text(

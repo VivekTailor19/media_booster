@@ -3,8 +3,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 class ApnaShared
 {
 
-  String? email = "";
-  String? password = "";
 
    Future<void> setdata({required String name,required String password,required String email,bool? login})
    async {
@@ -18,7 +16,7 @@ class ApnaShared
 
    }
 
-  Future<LoginModel> readdata()
+  Future<Map<dynamic, dynamic>> readdata()
   async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
@@ -26,20 +24,14 @@ class ApnaShared
     String email = prefs.getString("uemail")!;
     String password = prefs.getString("upassword")!;
     bool? login = prefs.getBool("ulogin");
-    LoginModel lm = LoginModel(name:name,email: email,password: password,islogin: login);
-    return lm;
+
+    return {'gname':name,'gemail':email,'gpassword':password,'glogin':login};
+
+    // LoginModel lm = LoginModel(email: email,password: password,islogin: login);
+    // return lm;
 
   }
 
 
-
-
-
 }
 
-class LoginModel
-{
-  String? name,email,password;
-  bool? islogin;
-  LoginModel({this.name,this.email, this.password,this.islogin});
-}

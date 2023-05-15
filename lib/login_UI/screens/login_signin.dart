@@ -97,12 +97,12 @@ class _Login_SignInState extends State<Login_SignIn> {
                     InkWell(
                       onTap: () async {
                         ApnaShared aps = ApnaShared();
+                        Map m1 = await aps.readdata();
 
-                        LoginModel lm =await aps.readdata();
-
-                        if(lm.email== checkemail.text && lm.password== checkpassword.text)
+                        if( checkemail.text == m1['gemail'] && checkpassword.text == m1['gpassword'] )
                         {
-                          Navigator.pushReplacementNamed(context, 'welcome',arguments: lm.name);
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Successfully Login")));
+                          Navigator.pushReplacementNamed(context, 'welcome',arguments: m1['gname']);
                         }
                         else
                         {
@@ -147,7 +147,7 @@ class _Login_SignInState extends State<Login_SignIn> {
                   ),
                   TextButton(
                     onPressed: () {
-                      Navigator.pushReplacementNamed(context, 'signup');
+                      Navigator.pushNamed(context, 'signup');
                     },
                     child: Text(
                       "Sign up",

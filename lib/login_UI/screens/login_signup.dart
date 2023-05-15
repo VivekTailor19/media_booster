@@ -13,6 +13,7 @@ class Login_SignUp extends StatefulWidget {
 
 class _Login_SignUpState extends State<Login_SignUp> {
 
+  TextEditingController txtname = TextEditingController();
   TextEditingController txtemail = TextEditingController();
   TextEditingController txtpassword = TextEditingController();
 
@@ -90,6 +91,16 @@ class _Login_SignUpState extends State<Login_SignUp> {
                       height: 2.h,
                     ),
                     TextField(
+                      controller: txtname,
+                      decoration: InputDecoration(
+                          hintText: "Name",
+                          hintStyle: TextStyle(fontSize: 20),
+                          suffixIcon: Icon(
+                            Icons.person,
+                            color: Color(0xff2A8CED),
+                          )),
+                    ),
+                    TextField(
                       controller: txtemail,
                       decoration: InputDecoration(
                           hintText: "E-mail",
@@ -116,8 +127,8 @@ class _Login_SignUpState extends State<Login_SignUp> {
                     InkWell(
                       onTap: () async {
                         ApnaShared aps = ApnaShared();
-                        aps.setdata(password: txtpassword.text, email: txtemail.text,login: true,name:"Flutter");
-                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Data is registered"),duration: Duration(seconds: 1),));
+                        aps.setdata(password: txtpassword.text, email: txtemail.text,login: true,name:txtname.text);
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Account is Created..."),duration: Duration(seconds: 1),));
                         Navigator.pushReplacementNamed(context, 'signin');
                       },
                       child: Container(

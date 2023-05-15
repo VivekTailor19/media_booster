@@ -1,7 +1,6 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:media_booster/login_UI/provider/login_provider.dart';
 import 'package:media_booster/staggered_gallery/s_gallery_provider.dart';
 import 'package:media_booster/staggered_gallery/staggered.dart';
 import 'package:provider/provider.dart';
@@ -21,13 +20,12 @@ void main() {
             builder: (context, orientation, deviceType) => MultiProvider(
               providers: [
                 ChangeNotifierProvider(create: (context) => SGalleryProvider(),),
-                ChangeNotifierProvider(create: (context) => LoginProvider(),),
               ],
               child: MaterialApp(
                 debugShowCheckedModeBanner: false,
-               // initialRoute: "splash",
+               initialRoute: "splash",
                 routes: {
-                  "/":(context) => Login_SignUp(),
+                  "/":(context) => Login_SignIn(),
                   "splash":(context) => SplashScreen(),
                   "signup":(context) => Login_SignUp(),
                   "signin":(context) => Login_SignIn(),

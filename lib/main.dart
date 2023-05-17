@@ -17,6 +17,9 @@ import 'login_UI/splash/login_splash.dart';
 
 void main() {
   runApp(
+      // DevicePreview(
+      //   enabled: !kReleaseMode,
+      //   builder: (context) =>
 
           Sizer(
             builder: (context, orientation, deviceType) => MultiProvider(
@@ -26,9 +29,9 @@ void main() {
               ],
               child: MaterialApp(
                 debugShowCheckedModeBanner: false,
-               // initialRoute: "intro_splash",
+                initialRoute: "login",
                 routes: {
-                  "/":(context) => HomeScreen(),
+                  // "/":(context) => HomeScreen(),
 
                   "login":(context) => Login_Splash(),
                   "signup":(context) => Login_SignUp(),
@@ -37,11 +40,14 @@ void main() {
 
                   "gallery":(context) => Staggered_Gallery(),
 
-                  "intro":(context) => Intro_Screen(),
+                  "intro":(context) => Intro_Splash(),
+                  "introduction":(context) => Intro_Screen(),
+
                 },
               ),
             ),
         ),
+     // ),
 
 
   );

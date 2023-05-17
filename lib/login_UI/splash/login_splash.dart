@@ -19,7 +19,10 @@ class _Login_SplashState extends State<Login_Splash> {
       ApnaShared aps = ApnaShared();
       Map m1 = await aps.readdata();
 
-      m1['glogin'] == false ? Navigator.pushReplacementNamed(context,"signin") : Navigator.pushReplacementNamed(context,"welcome", arguments: m1['gname'])  ;
+      m1['getted'] == true ?
+      Navigator.pushReplacementNamed(context,"welcome", arguments: m1['gname'])
+      :Navigator.pushReplacementNamed(context,"signin");
+
     },);
 
     return SafeArea(

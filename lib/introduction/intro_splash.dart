@@ -31,7 +31,7 @@ class _Intro_SplashState extends State<Intro_Splash> {
 
       mskipped["getted"] == true ?
       Navigator.pushReplacementNamed(context, "gallery") :
-      Navigator.pushReplacementNamed(context, "intro")
+      Navigator.pushReplacementNamed(context, "introduction")
       ;
     },);
 

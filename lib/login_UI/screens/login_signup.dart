@@ -21,165 +21,170 @@ class _Login_SignUpState extends State<Login_SignUp> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Stack(
-          children: [
-            Align(
-              alignment: Alignment(1.8, -1.7),
-              child: CircleAvatar(
-                radius: 40.w,
-                backgroundColor: Color(0xff38B4FE),
-              ),
-            ),
-            Align(
-              alignment: Alignment(-4, -1.6),
-              child: CircleAvatar(
-                radius: 44.w,
-                backgroundColor: Color(0xff2A8CED),
-              ),
-            ),
-            Align(
-              alignment: Alignment(-5, -1.67),
-              child: CircleAvatar(
-                radius: 42.5.w,
-                backgroundColor: Color(0xff1F6AC7),
-              ),
-            ),
-            Align(
-              alignment: Alignment(0, -0.7),
-              child: CircleAvatar(
-                radius: 20.w,
-                backgroundColor: Colors.white,
-                child: Transform.rotate(
-                    angle: 0,
-                    child: FlutterLogo(
-                      size: 25.w,
-                    )),
-              ),
-            ),
-            Align(
-              alignment: Alignment(0, 0.12),
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10.w),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  //crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      height: 30.w,
-                      // color: Colors.red,
-                        alignment: Alignment.center,
-                        child: Column(
-                          children: [
-                        Text(
-                          "Create",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15.w,
-                              color: Color(0xff1F6AC7),
-                              letterSpacing: 2),
+        body: SingleChildScrollView(
+          child: SizedBox(
+            height: 95.h,
+            child: Stack(
+              children: [
+                Align(
+                  alignment: Alignment(1.8, -1.7),
+                  child: CircleAvatar(
+                    radius: 40.w,
+                    backgroundColor: Color(0xff38B4FE),
+                  ),
+                ),
+                Align(
+                  alignment: Alignment(-4, -1.6),
+                  child: CircleAvatar(
+                    radius: 44.w,
+                    backgroundColor: Color(0xff2A8CED),
+                  ),
+                ),
+                Align(
+                  alignment: Alignment(-5, -1.67),
+                  child: CircleAvatar(
+                    radius: 42.5.w,
+                    backgroundColor: Color(0xff1F6AC7),
+                  ),
+                ),
+                Align(
+                  alignment: Alignment(0, -0.7),
+                  child: CircleAvatar(
+                    radius: 20.w,
+                    backgroundColor: Colors.white,
+                    child: Transform.rotate(
+                        angle: 0,
+                        child: FlutterLogo(
+                          size: 25.w,
+                        )),
+                  ),
+                ),
+                Align(
+                  alignment: Alignment(0, 0.12),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10.w),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      //crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                          height: 30.w,
+                          // color: Colors.red,
+                            alignment: Alignment.center,
+                            child: Column(
+                              children: [
+                            Text(
+                              "Create",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15.w,
+                                  color: Color(0xff1F6AC7),
+                                  letterSpacing: 2),
+                            ),
+                            Text(
+                              "account",
+                              style: TextStyle(
+                                fontSize: 10.w,
+                                color: Color(0xff2A8CED),
+                              ),
+                            ),
+                          ],
+                        )),
+                        SizedBox(
+                          height: 2.h,
                         ),
-                        Text(
-                          "account",
-                          style: TextStyle(
-                            fontSize: 10.w,
-                            color: Color(0xff2A8CED),
-                          ),
+                        TextField(
+                          controller: txtname,
+                          decoration: InputDecoration(
+                              hintText: "Name",
+                              hintStyle: TextStyle(fontSize: 20),
+                              suffixIcon: Icon(
+                                Icons.person,
+                                color: Color(0xff2A8CED),
+                              )),
                         ),
-                      ],
-                    )),
-                    SizedBox(
-                      height: 2.h,
-                    ),
-                    TextField(
-                      controller: txtname,
-                      decoration: InputDecoration(
-                          hintText: "Name",
-                          hintStyle: TextStyle(fontSize: 20),
-                          suffixIcon: Icon(
-                            Icons.person,
-                            color: Color(0xff2A8CED),
-                          )),
-                    ),
-                    TextField(
-                      controller: txtemail,
-                      decoration: InputDecoration(
-                          hintText: "E-mail",
-                          hintStyle: TextStyle(fontSize: 20),
-                          suffixIcon: Icon(
-                            Icons.mail_outline_rounded,
-                            color: Color(0xff2A8CED),
-                          )),
-                    ),
-                    TextField(
-                      controller: txtpassword,
-                      decoration: InputDecoration(
+                        TextField(
+                          controller: txtemail,
+                          decoration: InputDecoration(
+                              hintText: "E-mail",
+                              hintStyle: TextStyle(fontSize: 20),
+                              suffixIcon: Icon(
+                                Icons.mail_outline_rounded,
+                                color: Color(0xff2A8CED),
+                              )),
+                        ),
+                        TextField(
+                          controller: txtpassword,
+                          decoration: InputDecoration(
 
-                          hintText: "Password",
-                          hintStyle: TextStyle(fontSize: 20),
-                          suffixIcon: Icon(
-                            Icons.lock_rounded,
-                            color: Color(0xff2A8CED),
-                          )),
+                              hintText: "Password",
+                              hintStyle: TextStyle(fontSize: 20),
+                              suffixIcon: Icon(
+                                Icons.lock_rounded,
+                                color: Color(0xff2A8CED),
+                              )),
+                        ),
+                        SizedBox(
+                          height: 5.h,
+                        ),
+                        InkWell(
+                          onTap: () async {
+                            ApnaShared aps = ApnaShared();
+                            aps.setdata(password: txtpassword.text, email: txtemail.text,login: true,name:txtname.text);
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Account is Created..."),duration: Duration(seconds: 1),));
+                            Navigator.pushReplacementNamed(context, 'signin');
+                          },
+                          child: Container(
+                            height: 6.h,
+                            width: 79.5.w,
+                            child: Text(
+                              "Sign up",
+                              style: TextStyle(
+                                  fontSize: 6.5.w,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                                gradient: LinearGradient(colors: [
+                              Color(0xff1F6AC7),
+                              Color(0xff2A8CED),
+                              Color(0xff38B4FE),
+                            ])),
+                          ),
+                        )
+                      ],
                     ),
-                    SizedBox(
-                      height: 5.h,
-                    ),
-                    InkWell(
-                      onTap: () async {
-                        ApnaShared aps = ApnaShared();
-                        aps.setdata(password: txtpassword.text, email: txtemail.text,login: true,name:txtname.text);
-                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Account is Created..."),duration: Duration(seconds: 1),));
+                  ),
+                ),
+                Align(
+                  alignment: Alignment(0.5, 0.95),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Already have account?",
+                        style: TextStyle(fontSize: 5.w),
+                      ),
+                      SizedBox(
+                        width: 1.5.w,
+                      ),
+                      TextButton(onPressed: (){
                         Navigator.pushReplacementNamed(context, 'signin');
                       },
-                      child: Container(
-                        height: 6.h,
-                        width: 79.5.w,
-                        child: Text(
-                          "Sign up",
-                          style: TextStyle(
-                              fontSize: 6.5.w,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                            gradient: LinearGradient(colors: [
-                          Color(0xff1F6AC7),
-                          Color(0xff2A8CED),
-                          Color(0xff38B4FE),
-                        ])),
-                      ),
-                    )
-                  ],
-                ),
-              ),
+                        child:Text("Sign in",
+                        style: TextStyle(
+                          color: Colors.blue,
+                          fontSize: 5.w,
+                          decoration: TextDecoration.underline,
+                        ),)
+                      )
+                    ],
+                  ),
+                )
+              ],
             ),
-            Align(
-              alignment: Alignment(0.5, 0.95),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Already have account?",
-                    style: TextStyle(fontSize: 5.w),
-                  ),
-                  SizedBox(
-                    width: 1.5.w,
-                  ),
-                  TextButton(onPressed: (){
-                    Navigator.pushReplacementNamed(context, 'signin');
-                  },
-                    child:Text("Sign in",
-                    style: TextStyle(
-                      color: Colors.blue,
-                      fontSize: 5.w,
-                      decoration: TextDecoration.underline,
-                    ),)
-                  )
-                ],
-              ),
-            )
-          ],
+          ),
         ),
       ),
     );

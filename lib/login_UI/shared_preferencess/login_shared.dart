@@ -4,14 +4,14 @@ class ApnaShared
 {
 
 
-   Future<void> setdata({required String name,required String password,required String email,bool? login})
+   Future<void> setdata({required String name,required String password,required String email,required bool login})
    async {
      SharedPreferences prefs = await SharedPreferences.getInstance();
 
-     prefs.setString('uname',name);
+     prefs.setString("uname",name);
      prefs.setString('uemail',email);
      prefs.setString('upassword',password);
-     prefs.setBool('ulogin',login!);
+     prefs.setBool('ulogin',login);
 
 
    }
@@ -20,16 +20,22 @@ class ApnaShared
   async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
-    String name = prefs.getString("uname")!;
-    String email = prefs.getString("uemail")!;
-    String password = prefs.getString("upassword")!;
+    String? name = prefs.getString("uname");
+    String? email = prefs.getString("uemail");
+    String? password = prefs.getString("upassword");
     bool? login = prefs.getBool("ulogin");
 
-    return {'gname':name,'gemail':email,'gpassword':password,'glogin':login};
+    return {'gname':name,'gemail':email,'gpassword':password,'getted':login};
 
     // LoginModel lm = LoginModel(email: email,password: password,islogin: login);
     // return lm;
 
+  }
+
+  Future<void> dataclear()
+  async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    pref.clear();
   }
 
 

@@ -29,9 +29,9 @@ void main() {
               ],
               child: MaterialApp(
                 debugShowCheckedModeBanner: false,
-                initialRoute: "login",
+                //initialRoute: "login",
                 routes: {
-                  // "/":(context) => HomeScreen(),
+                   "/":(context) => HomeScreen(),
 
                   "login":(context) => Login_Splash(),
                   "signup":(context) => Login_SignUp(),

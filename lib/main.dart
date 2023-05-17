@@ -7,6 +7,7 @@ import 'package:media_booster/staggered_gallery/staggered.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
+import 'homeScreen.dart';
 import 'introduction/intro.dart';
 import 'introduction/intro_provider.dart';
 import 'login_UI/screens/login_signin.dart';
@@ -27,16 +28,13 @@ void main() {
                 debugShowCheckedModeBanner: false,
                // initialRoute: "intro_splash",
                 routes: {
-                  //"/":(context) => Login_SignIn(),
-                  "splash":(context) => SplashScreen(),
+                  "/":(context) => HomeScreen(),
+                  "login":(context) => SplashScreen(),
                   "signup":(context) => Login_SignUp(),
                   "signin":(context) => Login_SignIn(),
                   "welcome":(context) => Login_Welcome(),
                   "gallery":(context) => Staggered_Gallery(),
                   "intro":(context) => Intro_Screen(),
-
-                  "intro_splash":(context) => Intro_Splash(),
-                   "/":(context) => Intro_Splash(),
                 },
               ),
             ),

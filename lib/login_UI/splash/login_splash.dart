@@ -3,22 +3,23 @@ import 'package:flutter/material.dart';
 import 'package:media_booster/login_UI/shared_preferencess/login_shared.dart';
 import 'package:sizer/sizer.dart';
 
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+class Login_Splash extends StatefulWidget {
+  const Login_Splash({Key? key}) : super(key: key);
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  State<Login_Splash> createState() => _Login_SplashState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _Login_SplashState extends State<Login_Splash> {
 
   @override
   Widget build(BuildContext context) {
 
-    Future.delayed(Duration(seconds: 3),() async {
+    Future.delayed(Duration(seconds: 1),() async {
+
       ApnaShared aps = ApnaShared();
       Map m1 = await aps.readdata();
 
-      m1['glogin'] ? Navigator.pushReplacementNamed(context,"welcome", arguments: m1['gname']) : Navigator.pushReplacementNamed(context,"signin");
+      m1['glogin'] == false ? Navigator.pushReplacementNamed(context,"signin") : Navigator.pushReplacementNamed(context,"welcome", arguments: m1['gname'])  ;
     },);
 
     return SafeArea(

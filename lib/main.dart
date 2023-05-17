@@ -29,11 +29,14 @@ void main() {
                // initialRoute: "intro_splash",
                 routes: {
                   "/":(context) => HomeScreen(),
-                  "login":(context) => SplashScreen(),
+
+                  "login":(context) => Login_Splash(),
                   "signup":(context) => Login_SignUp(),
                   "signin":(context) => Login_SignIn(),
                   "welcome":(context) => Login_Welcome(),
+
                   "gallery":(context) => Staggered_Gallery(),
+
                   "intro":(context) => Intro_Screen(),
                 },
               ),

@@ -24,7 +24,7 @@ class _Intro_SplashState extends State<Intro_Splash> {
     ipT = Provider.of<IntroProvider>(context);
     ipF = Provider.of<IntroProvider>(context,listen:false);
 
-    Future.delayed(Duration(seconds: 1),() async {
+    Future.delayed(Duration(seconds: 3),() async {
 
       IntroShared ishare = IntroShared();
       Map mskipped = await ishare.readData();

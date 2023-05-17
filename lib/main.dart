@@ -6,6 +6,7 @@ import 'package:media_booster/staggered_gallery/staggered.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
+import 'introduction/intro.dart';
 import 'login_UI/screens/login_signin.dart';
 import 'login_UI/screens/login_signup.dart';
 import 'login_UI/screens/login_welcome.dart';
@@ -23,7 +24,7 @@ void main() {
               ],
               child: MaterialApp(
                 debugShowCheckedModeBanner: false,
-               initialRoute: "splash",
+               initialRoute: "intro",
                 routes: {
                   "/":(context) => Login_SignIn(),
                   "splash":(context) => SplashScreen(),
@@ -31,6 +32,7 @@ void main() {
                   "signin":(context) => Login_SignIn(),
                   "welcome":(context) => Login_Welcome(),
                   "gallery":(context) => Staggered_Gallery(),
+                  "intro":(context) => Intro_Screen(),
                 },
               ),
             ),

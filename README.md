@@ -2,13 +2,6 @@
 
 # Login Pages
 <p>
-  
-  
-
-https://github.com/VivekTailor19/media_booster/assets/119835214/1fc41af9-9fce-4efc-8d22-2b2964553c92
-
-
-  
   <img src = "https://github.com/VivekTailor19/media_booster/assets/119835214/43c952f6-3170-4f4b-958a-117a606426c3" height = "600" width = "300" >&nbsp;&nbsp;&nbsp;&nbsp;
   <img src = "https://github.com/VivekTailor19/media_booster/assets/119835214/155b9df6-cbd1-4861-84a8-1542c9e13175" height = "600" width = "300" >&nbsp;&nbsp;&nbsp;&nbsp;
   <img src = "https://github.com/VivekTailor19/media_booster/assets/119835214/50f9595a-084e-4f42-9584-6b20e76b366f" height = "600" width = "300" >
@@ -34,6 +27,6 @@ https://github.com/VivekTailor19/media_booster/assets/119835214/1fc41af9-9fce-4e
 </p>
 
 <p>
-<img src = "https://github.com/VivekTailor19/media_booster/assets/119835214/82f9fa46-9081-4b9d-8ed3-551398a8fe39" height = "600" width = "300" > &nbsp;&nbsp;&nbsp;&nbsp;
-<img src = "https://github.com/VivekTailor19/media_booster/assets/119835214/fb324c49-28b8-4927-a4e8-237a39134a2f" height = "600" width = "300" >
+<img src = "https://github.com/VivekTailor19/media_booster/assets/119835214/82f9fa46-9081-4b9d-8ed3-551398a8fe39" height = "550" width = "310" > &nbsp;&nbsp;&nbsp;&nbsp;
+<img src = "https://github.com/VivekTailor19/media_booster/assets/119835214/fb324c49-28b8-4927-a4e8-237a39134a2f" height = "550" width = "310" >
 </p>

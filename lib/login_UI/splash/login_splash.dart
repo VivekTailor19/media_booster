@@ -23,6 +23,7 @@ class _Login_SplashState extends State<Login_Splash> {
       Navigator.pushReplacementNamed(context,"welcome", arguments: m1['gname'])
       :Navigator.pushReplacementNamed(context,"signin");
 
+
     },);
 
     return SafeArea(

@@ -11,9 +11,8 @@
   
 # Staggered Gallery
 <p>
-<img src = "https://github.com/VivekTailor19/media_booster/assets/119835214/b39d930f-186c-4565-a950-a2fce3c75791" height = "550" width = "310" >
-<img src = "https://github.com/VivekTailor19/media_booster/assets/119835214/15df7cc7-d9b3-455b-b217-4946b55065e0" height = "550" width = "310" >
-
+<img src = "https://github.com/VivekTailor19/media_booster/assets/119835214/4a4e64aa-dcfc-42f6-b0d8-4881dc25fe2d" height = "550" width = "310" >
+<img src = "https://github.com/VivekTailor19/media_booster/assets/119835214/6de5e8c1-747e-4eb0-ba0f-a436440720ea" height = "550" width = "310" >
  </p>
   
 # Introduction Screen

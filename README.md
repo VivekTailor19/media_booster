@@ -6,9 +6,9 @@
   <img src = "https://github.com/VivekTailor19/media_booster/assets/119835214/155b9df6-cbd1-4861-84a8-1542c9e13175" height = "550" width = "300" >
   <img src = "https://github.com/VivekTailor19/media_booster/assets/119835214/50f9595a-084e-4f42-9584-6b20e76b366f" height = "550" width = "300" >
 
-  </p>
-  
-  <br><br><br><br>
+</p>
+
+<br><br><br><br>
   
 # Staggered Gallery
 <p>

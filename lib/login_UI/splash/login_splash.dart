@@ -14,7 +14,7 @@ class _Login_SplashState extends State<Login_Splash> {
   @override
   Widget build(BuildContext context) {
 
-    Future.delayed(Duration(seconds: 1),() async {
+    Future.delayed(Duration(seconds: 3),() async {
 
       ApnaShared aps = ApnaShared();
       Map m1 = await aps.readdata();
@@ -27,7 +27,7 @@ class _Login_SplashState extends State<Login_Splash> {
 
     return SafeArea(
       child: Scaffold(
-        body: Image.network("https://img.freepik.com/free-vector/privacy-policy-concept-illustration_114360-7853.jpg?w=740&t=st=1684137659~exp=1684138259~hmac=e67122d36b1299c8de0449f5f135b7143cfd492d5f3d4d06966a9013c436c4a2",height: 100.h,width: 100.w,fit: BoxFit.fill,),
+        body: Center(child: Image.network("https://img.freepik.com/free-vector/low-code-development-concept-illustration_114360-7474.jpg?w=826&t=st=1684402241~exp=1684402841~hmac=a2edfb4e1ec18c0a329270da40a958fc7d7b06b0a315d427dbbf25bdfb6440b1",)),
       ),
     );
   }

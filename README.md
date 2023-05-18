@@ -24,9 +24,6 @@
 <img src = "https://github.com/VivekTailor19/media_booster/assets/119835214/d050de89-eb43-4ab9-a3ca-ad6b853b5c9f" height = "550" width = "310">
 <img src = "https://github.com/VivekTailor19/media_booster/assets/119835214/c051647b-f9f3-470a-a8cc-a829538dc446" height = "550" width = "310" > 
 <img src = "https://github.com/VivekTailor19/media_booster/assets/119835214/4c99c0d5-fa3c-471a-81a2-410be0b4ffa2" height = "550" width = "310" >
-</p>
-
-<p>
-<img src = "https://github.com/VivekTailor19/media_booster/assets/119835214/82f9fa46-9081-4b9d-8ed3-551398a8fe39" height = "550" width = "310" > &nbsp;&nbsp;&nbsp;&nbsp;
+<img src = "https://github.com/VivekTailor19/media_booster/assets/119835214/82f9fa46-9081-4b9d-8ed3-551398a8fe39" height = "550" width = "310" >
 <img src = "https://github.com/VivekTailor19/media_booster/assets/119835214/fb324c49-28b8-4927-a4e8-237a39134a2f" height = "550" width = "310" >
 </p>
